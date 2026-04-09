@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🇹🇭泰式檸香薄荷頭療🍋🍋</title>
+
 <style>
 body {
   margin: 0;
@@ -11,36 +12,46 @@ body {
   background: #fff7ed;
   color: #333;
 }
+
+/* 容器 */
 .container {
   padding: 20px;
   max-width: 500px;
   margin: auto;
 }
+
+/* 卡片 */
 .card {
   background: #ffffff;
   border-radius: 20px;
   padding: 20px;
-  margin: 20px 0 0 0; /* 卡片顶部空隙20px，与图片分开 */
+  margin-top: 20px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
+
 .title {
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 10px;
 }
+
 .price-old {
   text-decoration: line-through;
   opacity: 0.6;
 }
+
 .price-new {
   font-size: 32px;
   font-weight: bold;
   color: #e11d48;
 }
+
 .highlight {
   color: #f59e0b;
   font-weight: bold;
 }
+
+/* 按鈕 */
 .button {
   display: block;
   width: 100%;
@@ -52,15 +63,28 @@ body {
   font-size: 16px;
   font-weight: bold;
   margin-top: 15px;
+  cursor: pointer;
 }
+
+/* 移除所有 a 的藍線 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a img {
+  border: none;
+  display: block;
+}
+
+/* 圖片 */
 img {
   width: 100%;
   display: block;
+  margin: 0;
   border-radius: 0;
-  margin: 0; /* 保证图片紧贴无缝 */
 }
 
-/* 圓角效果 */
+/* 圓角 */
 .top-rounded {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -68,53 +92,56 @@ img {
 .bottom-rounded {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  margin-bottom: 20px; /* 最后一张图片与卡片空隙 */
+  margin-bottom: 20px;
 }
 </style>
+
 </head>
+
 <body>
+
 <div class="container">
 
-  <!-- 頂部橫幅圖片 -->
-  <img src="banner.png" alt="頂部橫幅" class="top-rounded">
-  <img src="banner1.png" alt="頂部橫幅">
-  <img src="banner2.png" alt="頂部橫幅">
-  <img src="banner3.png" alt="頂部橫幅" class="bottom-rounded">
+  <!-- 頂部圖片 -->
+  <img src="banner.jpg" class="top-rounded">
+  <img src="banner1.jpg">
+  <img src="banner2.jpg">
+  <img src="banner3.jpg">
+  <img src="banner4.jpg">
+  <img src="banner5.jpg">
 
+  <!-- 卡片 -->
   <div class="card">
     <div class="title">🇹🇭泰式檸香薄荷頭療🍋🍋</div>
-    <p>70分鐘極致放鬆</p>
-    <p>喚醒頭皮能量 💁🏻‍♀️重煥秀髮光澤✨✨</p>
-    <p>🇭🇰專為香港人設計：</p>
-   <p> ▶  快節奏生活中的慢享受</p>
+    <p>70分鐘極致放鬆 </p>
+    <p>喚醒頭皮能量 💁🏻‍♀️重煥秀髮光澤✨✨</p> 
+    
+    <div class="title">🇭🇰專為香港人設計：</div>
+    <p>▶  快節奏生活中的慢享受</p>
     <p>▶  針對長期低頭、熬夜的頭皮護理</p>
-   <p>  ▶  精油梳頭養髮，告別毛躁暗啞</p>
-    <p> 🌱放鬆從頭皮開始哦~</p>
-    <div class="title"></div>
-    <p></p>
-    <p></p>
-    <p class="highlight"></p>
+    <p>▶  精油梳頭養髮，告別毛躁暗啞</p>
+    <p class="highlight">🌱放鬆從頭皮開始哦~</p>
   </div>
 
   <div class="card">
     <div class="title">🔥 限時優惠</div>
     <p class="price-old">原價$888</p>
     <p class="price-new">$298</p>
-    <p class="highlight">📍荔枝角・鑽石山・北角
-🔥立即預約解鎖你的「頭等艙」療程！</p>
-    <div class="title">📝 立即領取優惠</div>
-    <a href="https://wa.me/85251675936" target="_blank">
-      <button class="button" id="whatsappBtn">📱 立即領取優惠(WhatsApp)</button>
+    <p class="highlight">📍荔枝角・鑽石山・北角</p>
+
+    <div class="title">🔥立即預約解鎖你的「頭等艙」療程</div>
+
+    <!-- WhatsApp 按鈕（原位置） -->
+    <a href="https://wa.me/85251675936" target="_blank" rel="noopener noreferrer" id="whatsappBtn">
+      <button class="button">📱 立即領取優惠(WhatsApp)</button>
     </a>
   </div>
 
 </div>
 
 <script>
-// 页面加载日志
 console.log("✅ 页面已加载完成");
 
-// 图片加载检测
 document.querySelectorAll("img").forEach((img, index) => {
   img.addEventListener("load", () => {
     console.log(`🖼️ 图片${index + 1}加载成功: ${img.src}`);
@@ -124,14 +151,11 @@ document.querySelectorAll("img").forEach((img, index) => {
   });
 });
 
-// WhatsApp按钮点击日志
 const btn = document.getElementById("whatsappBtn");
 if (btn) {
   btn.addEventListener("click", () => {
     console.log("📲 用户点击了 WhatsApp 按钮");
   });
-} else {
-  console.warn("⚠️ 找不到 WhatsApp 按钮");
 }
 </script>
 
