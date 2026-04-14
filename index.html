@@ -5,6 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🇹🇭泰式檸香薄荷頭療🍋🍋</title>
 
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1626341595154437');
+fbq('track', 'PageView');
+</script>
+
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1626341595154437&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
+
 <style>
 body {
   margin: 0;
@@ -13,14 +34,12 @@ body {
   color: #333;
 }
 
-/* 容器 */
 .container {
   padding: 20px;
   max-width: 500px;
   margin: auto;
 }
 
-/* 卡片 */
 .card {
   background: #ffffff;
   border-radius: 20px;
@@ -35,11 +54,6 @@ body {
   margin-bottom: 10px;
 }
 
-.price-old {
-  text-decoration: line-through;
-  opacity: 0.6;
-}
-
 .price-new {
   font-size: 32px;
   font-weight: bold;
@@ -51,7 +65,6 @@ body {
   font-weight: bold;
 }
 
-/* 按鈕 */
 .button {
   display: block;
   width: 100%;
@@ -64,35 +77,24 @@ body {
   font-weight: bold;
   margin-top: 15px;
   cursor: pointer;
+  text-align: center;
+  text-decoration: none;
 }
 
-/* 移除所有 a 的藍線 */
 a {
   text-decoration: none;
   color: inherit;
 }
-a img {
-  border: none;
-  display: block;
-}
 
-/* 圖片 */
 img {
   width: 100%;
   display: block;
   margin: 0;
-  border-radius: 0;
 }
 
-/* 圓角 */
 .top-rounded {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-}
-.bottom-rounded {
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  margin-bottom: 20px;
 }
 </style>
 
@@ -102,25 +104,19 @@ img {
 
 <div class="container">
 
-  <!-- 頂部圖片 -->
-  <img src="banner.jpg" class="top-rounded">
-  <img src="banner1.jpg">
-  <img src="banner2.jpg">
-  <img src="banner3.jpg">
-  <img src="banner4.jpg">
-  <img src="banner5.jpg">
+  <!-- 图片 -->
+  <img src="banner.jpg" class="top-rounded" loading="lazy">
+  <img src="banner1.jpg" loading="lazy">
+  <img src="banner2.jpg" loading="lazy">
+  <img src="banner3.jpg" loading="lazy">
+  <img src="banner4.jpg" loading="lazy">
+  <img src="banner5.jpg" loading="lazy">
 
-  <!-- 卡片 -->
+  <!-- 内容 -->
   <div class="card">
     <div class="title">🇹🇭泰式檸香薄荷頭療🍋🍋</div>
-    <p>70分鐘極致放鬆 </p>
-    <p>喚醒頭皮能量 💁🏻‍♀️重煥秀髮光澤✨✨</p> 
-    
-    <div class="title">🇭🇰專為香港人設計：</div>
-    <p>▶  快節奏生活中的慢享受</p>
-    <p>▶  針對長期低頭、熬夜的頭皮護理</p>
-    <p>▶  精油梳頭養髮，告別毛躁暗啞</p>
-    <p class="highlight">🌱放鬆從頭皮開始哦~</p>
+    <p>70分鐘極致放鬆</p>
+    <p>喚醒頭皮能量 💁🏻‍♀️重煥秀髮光澤✨✨</p>
   </div>
 
   <div class="card">
@@ -128,34 +124,40 @@ img {
     <p class="price-new">$298</p>
     <p class="highlight">📍荔枝角・鑽石山・北角</p>
 
-    <div class="title">🔥立即預約解鎖你的「頭等艙」療程</div>
+    <div class="title">👉 現在預約，立刻鎖定 $298 限時優惠名額</div>
 
-    <!-- WhatsApp 按鈕（原位置） -->
-    <a href="https://wa.me/85251675936" target="_blank" rel="noopener noreferrer" id="whatsappBtn">
-      <button class="button">📱 立即領取優惠(WhatsApp)</button>
+    <!-- WhatsApp CTA -->
+    <a href="https://wa.me/85251675936"
+       class="button"
+       id="whatsappBtn"
+       target="_blank"
+       rel="noopener noreferrer">
+      📱 立即領取優惠(WhatsApp)
     </a>
   </div>
 
 </div>
 
 <script>
-console.log("✅ 页面已加载完成");
+document.addEventListener("DOMContentLoaded", function () {
 
-document.querySelectorAll("img").forEach((img, index) => {
-  img.addEventListener("load", () => {
-    console.log(`🖼️ 图片${index + 1}加载成功: ${img.src}`);
-  });
-  img.addEventListener("error", () => {
-    console.error(`❌ 图片${index + 1}加载失败: ${img.src}`);
-  });
+  const btn = document.getElementById("whatsappBtn");
+
+  if (btn) {
+    btn.addEventListener("click", function () {
+
+      console.log("📲 WhatsApp click");
+
+      // Meta Pixel 事件
+      if (window.fbq) {
+        fbq('track', 'Contact');
+        fbq('track', 'Lead');
+      }
+
+    });
+  }
+
 });
-
-const btn = document.getElementById("whatsappBtn");
-if (btn) {
-  btn.addEventListener("click", () => {
-    console.log("📲 用户点击了 WhatsApp 按钮");
-  });
-}
 </script>
 
 </body>
